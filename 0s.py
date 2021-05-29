@@ -28,7 +28,7 @@ for x in range(len(rawdata)-1):
         pass
 
 users.sort(key=lambda x:x[1],reverse=True)
-print("Rank|User|0s")
+print("Rank|User|"+str(diff)+"s")
 print(":-:|:-:|:-:")
 for x in range(len(users)):
     print(str(x+1) + "|"  + users[x][0] + "|" + str(users[x][1]))
