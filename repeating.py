@@ -2,7 +2,6 @@ import csv
 
 def repeating(n):
     arr = list(str(n))
-    n = []
     for x in range(0,10):
         if arr.count(str(x)) == 1:
             return False
