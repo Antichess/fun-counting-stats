@@ -46,6 +46,12 @@ for x in range(len(rawdata)):
     except:
         pass
 
+for x in range(len(users)):
+    if users[i][6] > users[i][7]:
+        users[i] = (users[i][0],currentstamp,currentstamp,users[i][1],users[i][2],int(float(rawdata[x][2])),1,users[i][6])
+    else:
+        users[i] = (users[i][0],currentstamp,currentstamp,users[i][3],users[i][4],int(float(rawdata[x][2])),1,users[i][7])
+    
 users.sort(key=lambda x:x[7],reverse=True)
 print("Rank|User|Start Date|End Date|Days")
 print(":-:|:-:|:-:|:-:|-:")
