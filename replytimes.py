@@ -11,7 +11,7 @@ with open("decimal_log.csv","r") as file:
 print("loaded")
 
 d = {}
-user = "ClockButTakeOutTheL"
+user = "Antichess"
 diff = 1
 
 for c,x in enumerate(rawdata):
@@ -19,6 +19,8 @@ for c,x in enumerate(rawdata):
         if x[1] == user:
             t = int(float(rawdata[c][2]))-int(float(rawdata[c-1][2]))
             if t > 15:
+                t = 15
+            if t < 0:
                 t = 15
             if t not in d:
                 d[t] = 1
@@ -34,4 +36,7 @@ print(s_d)
 print("Reply time (s)|Count")
 print(":-|:-")
 for x in s_d:
-    print(f"{x[0]}|{x[1]}")
+    if x[0] == 15:
+        print(f">=15|{x[1]}")
+    else:
+        print(f"{x[0]}|{x[1]}")
