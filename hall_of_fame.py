@@ -34,8 +34,11 @@ def get_time_diff(time,last):
     if d < 3600:
         return f"{d//60} min{' ' if d//60 == 1 else 's '}{d%60} second{'' if d%60 == 1 else 's'}"
     else:
+        if d % 60 >= 30:
+            d = d + (60-(d%60))
+            
         if d > 84600:
-            return f"{d//86400} day{' ' if d//86400 == 1 else 's '}{d%86400//3600+d%86400} hour{' ' if d%86400//3600 == 1 else 's '}{d%86400%3600//60} min{'' if d%86400%3600//60 == 1 else 's'}"
+            return f"{d//86400} day{' ' if d//86400 == 1 else 's '}{d%86400//3600} hour{' ' if d%86400//3600 == 1 else 's '}{d%86400%3600//60} min{'' if d%86400%3600//60 == 1 else 's'}"
         else:
             return f"{d//3600} hour{' ' if d//3600 == 1 else 's '}{d%3600//60} min{'' if d%3600//60 == 1 else 's'}"
 
