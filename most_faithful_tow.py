@@ -70,8 +70,8 @@ with open(f"results/most_faithful_tow_counters.txt","w") as f:
         if c < 10:
             print(f"{c+1}|{x[0]}|{x[4]:.2f}%|{x[3]}")
 
-    f.write(f"Faithful towrards Negative\n")
-    print(f"Faithful towrards Negative\n")
+    f.write(f"Faithful towards Negative\n")
+    print(f"Faithful towards Negative\n")
     f.write(f"Rank|User|Negative count %|Counts\n")
     print(f"Rank|User|Negative count %|Counts")
     f.write(f":-:|:-:|:-:|:-:\n")
@@ -82,8 +82,8 @@ with open(f"results/most_faithful_tow_counters.txt","w") as f:
         if c < 10:
             print(f"{c+1}|{x[0]}|{x[5]:.2f}%|{x[3]}")
 
-    f.write(f"Faithful towrards Neither\n")
-    print(f"Faithful towrards Neither\n")
+    f.write(f"Faithful towards Neither\n")
+    print(f"Faithful towards Neither\n")
     f.write(f"Rank|User|Positive count %|Counts\n")
     print(f"Rank|User|Positive count %|Counts")
     f.write(f":-:|:-:|:-:|:-:\n")
