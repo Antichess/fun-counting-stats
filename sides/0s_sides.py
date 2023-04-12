@@ -1,4 +1,4 @@
-# this script assumes you have all nessecary files of the log_files, in the same directory as well
+# this script assumes you have all nessecary files of the log_files, in a sub-directory containing all of those files that is named "files" as well
 # https://drive.google.com/drive/folders/1_FWMSR66QqOjPIVjklzzN8RytjYyyKg3
 
 import csv
@@ -11,11 +11,11 @@ def add_data(u):
     else:
         users[u] = users[u] + 1
 
-diff = 0
-file_list = [x for x in os.listdir(os.getcwd()) if x.endswith(".csv")]
+diff = 1
+file_list = [x for x in os.listdir(os.path.join(os.getcwd(),"files")) if x.endswith(".csv")]
 for c,file in enumerate(file_list):
     rawdata = []
-    with open(file,"r",encoding="utf-8") as f:
+    with open(os.path.join(os.getcwd(),"files",file),"r",encoding="utf-8") as f:
         reader = csv.reader(f)
         for row in reader:
             rawdata.append(row)
