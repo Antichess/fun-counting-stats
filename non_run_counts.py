@@ -32,14 +32,14 @@ for x in range(len(rawdata)):
     except:
         pass
 
-data = [[x,users[x][0],users[x][1]] for x in users if users[x][1] > 1000]
-data.sort(key=lambda x:x[1],reverse=True)
+data = [[x,users[x][0],100*users[x][0]/users[x][1]] for x in users if users[x][1] > 10000]
+data.sort(key=lambda x:x[2],reverse=True)
 
 with open(f"results/non_run_counts.txt","w") as f:
     print(f"Rank|User|Non-run Counts|% counts")
     f.write(f"Rank|User|Non-run Counts|% counts\n")
-    print(f":-:|:-:|-:")
-    f.write(f":-:|:-:|-:\n")
+    print(f":-:|:-:|-:|-:")
+    f.write(f":-:|:-:|-:|-:\n")
     for c,x in enumerate(data):
-        print(f"{c+1}|{x[0]}|{x[1]}|{x[1]/x[2]*100:.2f}%")
-        f.write(f"{c+1}|{x[0]}|{x[1]}|{x[1]/x[2]*100:.2f}%\n")
+        print(f"{c+1}|{x[0]}|{x[1]}|{x[2]:.2f}%")
+        f.write(f"{c+1}|{x[0]}|{x[1]}|{x[2]:.2f}%\n")
